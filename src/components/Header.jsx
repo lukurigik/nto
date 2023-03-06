@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import * as THREE from "three";
+import icon from '../img/ar.png'
 
 export default function Header() {
 	const GRAVITY = 0.0007;
@@ -9,7 +10,7 @@ export default function Header() {
 	let container, plane;
 
 	const addBall = () => {
-		const geo = new THREE.SphereGeometry(Math.random() * 1.5, 10, 10);
+		const geo = new THREE.SphereGeometry(Math.random() + 1, 10, 10);
 		const mat = new THREE.MeshBasicMaterial({
 			color: 0x000,
 			wireframe: true,
@@ -119,7 +120,7 @@ export default function Header() {
 				<img
 					className='header__logo'
 					alt="AR"
-					src='https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/ar.jpg?v=1671026335428'
+					src={icon}
 				></img>
 			</div>
 		</div>

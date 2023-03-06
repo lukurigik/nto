@@ -38,14 +38,12 @@ a {
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-	
 	& canvas {
-		background-image: linear-gradient(180deg, rgba(9,9,121,0) 1%, rgba(255,255,255,0) 69%, rgba(255,255,255,1) 100%);
 		position: absolute;
 		top: 0;
 		width: 100vw;
 		height: 100vh;
-		z-index: 2;
+		z-index: -2;
 	}
 	&__container {
 		width: 80%;
@@ -55,7 +53,6 @@ a {
 		justify-content: space-between;
 		align-items: center;
 	}
-
 	&__logo {
 		width: 120px;
 		height: 80px;
@@ -66,11 +63,9 @@ a {
 		mix-blend-mode: difference;
 		user-select: none;
 	}
-
 	& a {
 		z-index: 100;
 	}
-
 	&__text {
 		user-select: none;
 		color: rgba(78, 78, 78, 1);
@@ -165,25 +160,21 @@ a {
 		align-items: center;
 		user-select: none;
 	}
-
 	& a {
 		display: flex;
 		align-items: center;
 	}
-
 	&__str1 {
 		width: 15px;
 		margin-right: 25px;
 		transform: rotate(180deg);
 		cursor: pointer;
 	}
-
 	&__str2 {
 		width: 15px;
 		margin-left: 25px;
 		cursor: pointer;
 	}
-
 	&__show {
 		outline: 3px solid $pre-main-color;
 		width: 90%;
@@ -193,7 +184,6 @@ a {
 		justify-content: space-between;
 		border-radius: 10px;
 	}
-
 	&__img {
 		outline: 2px solid $pre-main-color;
 		background-color: $help-color;
@@ -207,7 +197,6 @@ a {
 		object-fit: scale-down;
 		cursor: pointer;
 	}
-
 	&__video {
 		border-bottom-right-radius: 10px;
 		border-top-right-radius: 10px;
@@ -217,23 +206,20 @@ a {
 		right: 0;
 		background-color: black;
 	}
-
 	&__video * {
 		width: 100%;
 		height: 100%;
 	}
-
 	&__links {
 		margin-top: 20px;
 		margin-bottom: 20px;
 		width: 90%;
 		height: 80px;
-		border-radius: 10px;
-		background-color: $pre-main-color;
 		display: flex;
+		gap: 10px;
 	}
-
 	&__links * {
+		
 		user-select: none;
 		transition: 0.5s ease-out;
 		height: 100%;
@@ -243,17 +229,25 @@ a {
 		cursor: pointer;
 		justify-content: center;
 		text-decoration: none;
+		background-color: $pre-main-color;
 		color: $help-color;
 		font-family: "Montserrat", sans-serif;
 		font-size: 20px;
 		font-weight: 500;
 		border: 1px solid;
+		border-radius: 10px;
 	}
 	&__links a {
 		text-decoration: none;
+		
+	}
+	&__links *:hover {
+		background-color: $main-color
 	}
 	&__html div {
 		width: 100%;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
 	}
 }
 
@@ -491,41 +485,42 @@ a {
 	.tasks * {
 		width: 49%;
 	}
-	.description__show {
-		display: block;
-		height: 600px;
-		outline: none;
-		border-radius: 10px;
-		overflow: hidden;
-		z-index: 2;
-	}
-	.description__img {
-		border: 2px solid rgba(65, 65, 65, 0.9);
-		outline: none;
-		margin-bottom: 10px;
-		width: 300px !important;
-		margin-left: 50%;
-		transform: translateX(-50%);
-		border-radius: 10px;
-		height: 50%;
-		cursor: inherit;
-	}
-	.description__video {
-		width: 100%;
-		height: 50%;
-		border-radius: 10px;
-	}
-	.description__video * {
-		border-radius: 10px;
-		overflow-x: hidden;
-	}
-	.description__links {
-		margin-top: 30px;
-		margin-bottom: 20px;
-		width: 90%;
-		height: 80px;
-		border-radius: 11px;
-		background-color: rgba(65, 65, 65, 0.9);
-		display: flex;
+	.description {
+		&__show {
+			display: block;
+			height: 600px;
+			outline: none;
+			border-radius: 10px;
+			overflow: hidden;
+			z-index: 2;
+		}
+		&__img {
+			border: 2px solid rgba(65, 65, 65, 0.9);
+			outline: none;
+			margin-bottom: 10px;
+			width: 300px !important;
+			margin-left: 50%;
+			transform: translateX(-50%);
+			border-radius: 10px;
+			height: 50%;
+			cursor: inherit;
+		}
+		&__video {
+			width: 100%;
+			height: 50%;
+			border-radius: 10px;
+		}
+		&__video * {
+			border-radius: 10px;
+			overflow-x: hidden;
+		}
+		&__links {
+			margin-top: 30px;
+			margin-bottom: 20px;
+			width: 90%;
+			height: 80px;
+			border-radius: 11px;
+			display: flex;
+		}
 	}
 }
