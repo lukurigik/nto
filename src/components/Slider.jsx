@@ -3,34 +3,48 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import cross from "../img/cross.png"
+import qr from "../img/qr-code.gif"
 
 export default function Carousel() {
 	const [active, setActive] = useState(false);
 	const hotelCards = [
-		{
+    {
 			imageSrc:
-				"https://images.unsplash.com/photo-1559508551-44bff1de756b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80",
-			title: "Studio Room",
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/pattern-logo_4.png?v=1671025598749",
+			title: "Наша команда",
+			description: "Lorem ipsum dolor sit amet, consectur dolori",
+		},
+    {
+			imageSrc:
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/pattern-8876..png?v=1671113464108",
+			title: "Наш город",
+			description: "Lorem ipsum dolor sit amet, consectur dolori",
+		},
+    {
+			imageSrc:
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_5_2022-12-15_19-08-40.jpg?v=1671113422335",
+			title: "Программист",
 			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
 			imageSrc:
-				"https://images.unsplash.com/photo-1616940844649-535215ae4eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-			title: "Deluxe Room",
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_9_2022-12-15_19-08-40.jpg?v=1671113382303",
+			title: "Дизайнер",
 			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
 			imageSrc:
-				"https://images.unsplash.com/photo-1599619351208-3e6c839d6828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
-			title: "King Deluxe Room",
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_3_2022-12-15_19-08-40.jpg?v=1671113442204",
+			title: "Программист",
 			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
 		{
 			imageSrc:
-				"https://images.unsplash.com/photo-1461092746677-7b4afb1178f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-			title: "Royal Suite",
+				"https://cdn.glitch.global/e9f0b425-427c-442a-8767-e609606db14f/photo_4_2022-12-15_19-08-40.jpg?v=1671113435220",
+			title: "Моделлер",
 			description: "Lorem ipsum dolor sit amet, consectur dolori",
 		},
+		
 	];
 	const settings = {
 		dots: true,
@@ -49,7 +63,7 @@ export default function Carousel() {
 				<div
 					className={active ? "slider__in" : "slider__to"}
 					onClick={() => setActive(!active)}
-				></div>
+				><img src={qr} alt='qr'></img></div>
         <img
 					className={active ? "slider__back" : "slider__none"}
 					onClick={() => setActive(!active)}
@@ -58,7 +72,7 @@ export default function Carousel() {
 				></img>
 				<div
 					className={active ? "slider__code slider__active" : "slider__code"}
-				></div>
+				><img src={qr} alt='qr'></img></div>
 			</div>
 			<Slider {...settings}>
 				{hotelCards.map((card, index) => (

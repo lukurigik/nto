@@ -9,7 +9,7 @@ export default function Tasks() {
 		<div className='tasks'>
 			<div class='tasks__paragraph'>AR.js</div>
 			<div className='tasks__container'>
-				{[0, 1, 2, 3, 4].map((i) => {
+				{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
 					return (
 						<Link className='tasks__task' key={i} to={`/task?num=${i + ""}`}>
 							<p>{titles[i]}</p>
@@ -27,7 +27,7 @@ export default function Tasks() {
 					);
 				})}
 			</div>
-			<div class='tasks__paragraph'>Smth</div>
+			<div class='tasks__paragraph'>Игры</div>
 			<div class='tasks__container'>
 				{[10, 11, 12, 13, 14].map((i) => {
 					return (

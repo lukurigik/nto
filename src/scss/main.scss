@@ -80,6 +80,10 @@ a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: 0.1s linear;
+		&:hover {
+			color: $main-color;
+		}
 	}
 }
 
@@ -128,16 +132,16 @@ a {
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 10px;
-		width: 100%;
+		width: 98%;
 		margin: 20px 0;
 	}
 	&__task {
 		border-radius: 20px;
-		padding: 40px 10px;
+		padding: 40px 30px;
+		min-height: 100px;
 		background-color: $pre-main-color;
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		font-size: 18px;
 		font-weight: 600;
 		font-family: sans-serif;
@@ -166,6 +170,7 @@ a {
 .description {
 	user-select: none;
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -194,16 +199,14 @@ a {
 		cursor: pointer;
 	}
 	&__show {
-		outline: 3px solid $pre-main-color;
 		width: 90%;
-		height: 35vw;
+		height: 600px;
 		display: flex;
 		position: relative;
 		justify-content: space-between;
 		border-radius: 10px;
 	}
 	&__img {
-		outline: 2px solid $pre-main-color;
 		background-color: $help-color;
 		height: calc(100% + 1px);
 		width: 20%;
@@ -259,8 +262,9 @@ a {
 	}
 	&__links *:hover {
 		background-color: $main-color;
+		
 	}
-	&__html div {
+	&__html div, &__html div {
 		width: 100%;
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
@@ -272,14 +276,10 @@ a {
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
-
+	font-family: 'Inter', sans-serif;
+	
 	&__out {
 		width: 90%;
-		border: 2px solid $pre-main-color;
-		border-top-right-radius: 15px;
-		border-top-left-radius: 15px;
-		border-bottom-left-radius: 2px;
-		border-bottom-right-radius: 2px;
 	}
 	&__nav {
 		display: flex;
@@ -307,20 +307,22 @@ a {
 		background-color: $help-color;
 		width: 100%;
 		height: 70vh;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 10px;
+		
 	}
 
 	&__col {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		color: $black-color;
 		height: 20px;
+		width: 20px;
 	}
 
 	&__pre {
 		line-height: 18px;
 		font-size: 15px;
+		
 	}
 
 	&__style {
@@ -524,12 +526,7 @@ a {
 		z-index: 1;
 	}
 	&__in {
-		cursor: zoom-in;
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		left: 0;
-		background-color: black;
+		display: none;
 	}
 	&__to {
 		z-index: 1;
@@ -539,6 +536,15 @@ a {
 		width: 20px;
 		height: 20px;
 		background-color: black;
+		transition: 0.2s linear;
+		&:hover {
+			opacity: 0.8;
+		}
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	&__back {
 		user-select: none;
@@ -561,10 +567,17 @@ a {
 		top: 50%;
 		transform: translate(-50%, -50%);
 		background-color: black;
+		display: none;
 	}
 	&__active {
+		display: block;
 		width: 270px;
 		height: 270px;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	&__title {
 		width: 30%;
@@ -572,8 +585,8 @@ a {
 		font-weight: 700;
 	}
 	&__img {
-		width: 240px;
-		height: 200%;
+		height: 270px;
+		width: 270px;
 	}
 	&__desc {
 		font-size: 16px;

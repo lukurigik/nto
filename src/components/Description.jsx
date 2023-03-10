@@ -117,11 +117,11 @@ export default function Description(
 	];
   const imgDesk = useRef();
   const checkWidth = () => {
-    if (imgDesk.current.style.width == "40%") {
+    if (imgDesk.current.style.width == "60%") {
       imgDesk.current.style.width = "20%";
       imgDesk.current.style.borderRadius = "";
     } else {
-      imgDesk.current.style.width = "40%";
+      imgDesk.current.style.width = "60%";
       imgDesk.current.style.borderRadius = "10px";
     }
   }
