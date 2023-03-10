@@ -5,9 +5,7 @@ import Header from "../components/Header";
 export default function TaskPage() {
 
 	const [params, setParams] = useSearchParams();
-
-  console.log(params);
-
+	
 	return (
 		<>
 			<Description

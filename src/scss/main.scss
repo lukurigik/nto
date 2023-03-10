@@ -68,7 +68,7 @@ a {
 	}
 	&__text {
 		user-select: none;
-		color: rgba(78, 78, 78, 1);
+		color: $pre-main-color;
 		font-family: "Roboto", sans-serif;
 		font-size: 20px;
 		font-weight: 700;
@@ -118,31 +118,49 @@ a {
 }
 
 .tasks {
-	user-select: none;
-	margin: 10px 0 20px 0;
 	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-  gap: 10px;
-	justify-content: center;
-	& * {
-		border-radius: 10px;
-		height: 200px;
+	flex-direction: column;
+	align-items: center;
+	&__container {
+		user-select: none;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		width: 100%;
+		margin: 20px 0;
+	}
+	&__task {
+		border-radius: 20px;
+		padding: 40px 10px;
 		background-color: $pre-main-color;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: 18px;
-    font-weight: 600;
+		font-weight: 600;
 		font-family: sans-serif;
 		color: $help-color;
 		cursor: pointer;
+		width: 25%;
+		word-break:normal;
+		transition: 0.2s linear;
+		&:hover {
+			opacity: 0.9;
+		}
 	}
-  & a {
-    width: 30vw;
-    text-decoration: none;
-    white-space:nowrap;
-  }
+	& p {
+		width: 90%;
+	}
+	& a {
+		text-decoration: none;
+	}
+	&__paragraph {
+		font-size: 24px;
+		color: $black-color;
+		text-align: center;
+	}
 }
 
 .description {
@@ -219,7 +237,6 @@ a {
 		gap: 10px;
 	}
 	&__links * {
-		
 		user-select: none;
 		transition: 0.5s ease-out;
 		height: 100%;
@@ -239,10 +256,9 @@ a {
 	}
 	&__links a {
 		text-decoration: none;
-		
 	}
 	&__links *:hover {
-		background-color: $main-color
+		background-color: $main-color;
 	}
 	&__html div {
 		width: 100%;
@@ -256,7 +272,7 @@ a {
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
-	
+
 	&__out {
 		width: 90%;
 		border: 2px solid $pre-main-color;
@@ -479,18 +495,79 @@ a {
 }
 
 .slider {
-	width: 90%;
+	width: 89%;
 	margin: 30px auto 0;
 	height: 290px;
 	font-family: sans-serif;
+	position: relative;
+	.slick-prev:before, .slick-next:before {
+		color: $pre-main-color;
+	}
 	&__container {
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
-		gap: 70px;
+		gap: 20px;
 		height: 240px;
 	}
+	&__qr {
+		position: relative;
+		left: 0;
+	}
+	&__background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: $background-color;
+		z-index: 1;
+	}
+	&__in {
+		cursor: zoom-in;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 0;
+		background-color: black;
+	}
+	&__to {
+		z-index: 1;
+		cursor: zoom-in;
+		position: absolute;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		background-color: black;
+	}
+	&__back {
+		user-select: none;
+		cursor: pointer;
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		height: 30px;
+		width: 30px;
+		object-fit: cover;
+		z-index: 1;
+	}
+	&__none {
+		display: none;
+	}
+	&__code {
+		z-index: 2;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: black;
+	}
+	&__active {
+		width: 270px;
+		height: 270px;
+	}
 	&__title {
+		width: 30%;
 		font-size: 24px;
 		font-weight: 700;
 	}
@@ -508,9 +585,6 @@ a {
 @media (max-width: 967px) {
 	.markers__text {
 		justify-content: right;
-	}
-	.tasks * {
-		width: 49%;
 	}
 	.description {
 		&__show {
