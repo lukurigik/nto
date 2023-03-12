@@ -2,8 +2,23 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 export default function Tasks() {
-	
-	const titles = [" lorem lorem lorem lorem lorem", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+	const titles = [
+		"Куб",
+		"Сфера",
+		"Моделька",
+		"Музыкальная картинка",
+		"Видео",
+		"Прозрачный куб",
+		"Земной шар",
+		"Анимированная снежинка",
+		"...",
+		"Анимированный спрайт",
+		"Сцена с анимацией",
+		"",
+		"",
+		"",
+		"",
+	];
 
 	return (
 		<div className='tasks'>
